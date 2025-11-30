@@ -1,8 +1,11 @@
 streamlit
 requests
+openai
+
 # Optional: astroquery for JPL Horizons
 # astroquery
 # vector DB clients (uncomment as you integrate):
 # pinecone-client
 # supabase
-# numpy
+numpy
+matplotlib

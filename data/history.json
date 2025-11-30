@@ -1,0 +1,134 @@
+[
+    {
+        "timestamp": "2025-11-30T02:22:51.716391",
+        "object": "3I/ATLAS (C/2025 N1)",
+        "orbit_elements": {
+            "epoch_jd": 2460889.5,
+            "eccentricity": 6.13932950109603,
+            "perihelion_dist": 1.356400970215075,
+            "inclination_deg": 175.1130875201685,
+            "ascending_node_deg": 322.1565555004837,
+            "arg_perihelion_deg": 128.0099429877499,
+            "tp_jd": 2460977.982250502,
+            "semi_major_axis_au": -0.2639256677210139,
+            "mean_anomaly_deg": 76.8122111262121
+        },
+        "analysis": {
+            "classification": {
+                "orbit_type": "hyperbolic (interstellar)",
+                "retrograde": true
+            },
+            "days_to_perihelion": -31.616959178820252
+        }
+    },
+    {
+        "timestamp": "2025-11-30T02:22:53.045820",
+        "object": "3I/ATLAS (C/2025 N1)",
+        "orbit_elements": {
+            "epoch_jd": 2460889.5,
+            "eccentricity": 6.13932950109603,
+            "perihelion_dist": 1.356400970215075,
+            "inclination_deg": 175.1130875201685,
+            "ascending_node_deg": 322.1565555004837,
+            "arg_perihelion_deg": 128.0099429877499,
+            "tp_jd": 2460977.982250502,
+            "semi_major_axis_au": -0.2639256677210139,
+            "mean_anomaly_deg": 76.8122111262121
+        },
+        "analysis": {
+            "classification": {
+                "orbit_type": "hyperbolic (interstellar)",
+                "retrograde": true
+            },
+            "days_to_perihelion": -31.61697456566617
+        }
+    },
+    {
+        "timestamp": "2025-11-30T02:26:00.840318",
+        "object": "3I/ATLAS (C/2025 N1)",
+        "orbit_elements": {
+            "epoch_jd": 2460889.5,
+            "eccentricity": 6.13932950109603,
+            "perihelion_dist": 1.356400970215075,
+            "inclination_deg": 175.1130875201685,
+            "ascending_node_deg": 322.1565555004837,
+            "arg_perihelion_deg": 128.0099429877499,
+            "tp_jd": 2460977.982250502,
+            "semi_major_axis_au": -0.2639256677210139,
+            "mean_anomaly_deg": 76.8122111262121
+        },
+        "analysis": {
+            "classification": {
+                "orbit_type": "hyperbolic (interstellar)",
+                "retrograde": true
+            },
+            "days_to_perihelion": -31.61914811329916
+        }
+    },
+    {
+        "timestamp": "2025-11-30T02:26:08.305224",
+        "object": "3I/ATLAS (C/2025 N1)",
+        "orbit_elements": {
+            "epoch_jd": 2460889.5,
+            "eccentricity": 6.13932950109603,
+            "perihelion_dist": 1.356400970215075,
+            "inclination_deg": 175.1130875201685,
+            "ascending_node_deg": 322.1565555004837,
+            "arg_perihelion_deg": 128.0099429877499,
+            "tp_jd": 2460977.982250502,
+            "semi_major_axis_au": -0.2639256677210139,
+            "mean_anomaly_deg": 76.8122111262121
+        },
+        "analysis": {
+            "classification": {
+                "orbit_type": "hyperbolic (interstellar)",
+                "retrograde": true
+            },
+            "days_to_perihelion": -31.61923451256007
+        }
+    },
+    {
+        "timestamp": "2025-11-30T02:28:34.942419",
+        "object": "3I/ATLAS (C/2025 N1)",
+        "orbit_elements": {
+            "epoch_jd": 2460889.5,
+            "eccentricity": 6.13932950109603,
+            "perihelion_dist": 1.356400970215075,
+            "inclination_deg": 175.1130875201685,
+            "ascending_node_deg": 322.1565555004837,
+            "arg_perihelion_deg": 128.0099429877499,
+            "tp_jd": 2460977.982250502,
+            "semi_major_axis_au": -0.2639256677210139,
+            "mean_anomaly_deg": 76.8122111262121
+        },
+        "analysis": {
+            "classification": {
+                "orbit_type": "hyperbolic (interstellar)",
+                "retrograde": true
+            },
+            "days_to_perihelion": -31.620931702200323
+        }
+    },
+    {
+        "timestamp": "2025-11-30T02:31:44.406158",
+        "object": "3I/ATLAS (C/2025 N1)",
+        "orbit_elements": {
+            "epoch_jd": 2460889.5,
+            "eccentricity": 6.13932950109603,
+            "perihelion_dist": 1.356400970215075,
+            "inclination_deg": 175.1130875201685,
+            "ascending_node_deg": 322.1565555004837,
+            "arg_perihelion_deg": 128.0099429877499,
+            "tp_jd": 2460977.982250502,
+            "semi_major_axis_au": -0.2639256677210139,
+            "mean_anomaly_deg": 76.8122111262121
+        },
+        "analysis": {
+            "classification": {
+                "orbit_type": "hyperbolic (interstellar)",
+                "retrograde": true
+            },
+            "days_to_perihelion": -31.623124569654465
+        }
+    }
+]
