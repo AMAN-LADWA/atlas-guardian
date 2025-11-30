@@ -2,6 +2,9 @@ import streamlit as st
 import json
 from groq import Groq
 import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from agent.atlas_agent import AtlasAgent
 from agent.tools.history_manager import get_history
 

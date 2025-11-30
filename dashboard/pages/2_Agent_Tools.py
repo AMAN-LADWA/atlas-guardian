@@ -1,6 +1,10 @@
 import streamlit as st
 import json
 from agent.atlas_agent import AtlasAgent
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from agent.tools.agent_tools import (
     fetch_orbit_tool,
     compare_orbits_tool,

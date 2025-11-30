@@ -1,6 +1,9 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 from agent.tools.history_manager import get_history
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 st.title("📈 Orbit History & Drift Analysis")
 
