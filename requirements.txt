@@ -9,3 +9,6 @@ openai
 # supabase
 numpy
 matplotlib
+astropy
+feedparser
+groq
