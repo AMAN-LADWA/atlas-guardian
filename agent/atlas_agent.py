@@ -51,7 +51,7 @@ class AtlasAgent:
                 except ValueError:
                     elements[key] = match.group(1)
         # Extract heliocentric XYZ
-        match = re.search(xyz_pattern, header)
+        match_xyz = re.search(xyz_pattern, header)
         if match_xyz:
             for axis, idx in zip(("X", "Y", "Z"), (1, 2, 3)):
                 val = match_xyz.group(idx)
