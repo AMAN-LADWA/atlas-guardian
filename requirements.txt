@@ -12,3 +12,4 @@ matplotlib
 astropy
 feedparser
 groq
+plotly
