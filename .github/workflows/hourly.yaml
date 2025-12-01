@@ -1,0 +1,38 @@
+name: Hourly Snapshot
+
+on:
+  schedule:
+    - cron: "0 * * * *"   # every hour
+  workflow_dispatch:      # manual trigger
+
+jobs:
+  run-snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run hourly snapshot
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python scripts/snapshot_hourly.py
+
+      - name: Commit and push updates
+        run: |
+          git config user.email "bot@github.com"
+          git config user.name "ATLAS Guardian Bot"
+          git add .
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Hourly snapshot update"
+            git push
+          fi

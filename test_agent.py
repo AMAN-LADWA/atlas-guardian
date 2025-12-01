@@ -1,4 +1,3 @@
-from agent.atlas_agent import AtlasAgent
+from agent.tools.news_history_manager import load_history
 
-agent = AtlasAgent()
-print(agent.run())
+print(load_history())

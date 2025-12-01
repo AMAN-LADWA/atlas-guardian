@@ -23,7 +23,6 @@ class AtlasAgent:
 
         # Only use the part before the ephemeris table
         header = raw_text.split("$$SOE")[0]
-
         patterns = {
             "epoch_jd":          r"EPOCH=\s*([0-9\.\+Ee\-]+)",
             "eccentricity":      r"EC=\s*([0-9\.\+Ee\-]+)",
@@ -35,6 +34,11 @@ class AtlasAgent:
             "semi_major_axis_au":r"\bA=\s*([0-9\.\+Ee\-]+)",
             "mean_anomaly_deg":  r"MA=\s*([0-9\.\+Ee\-]+)",
         }
+        xyz_pattern = (
+            r"X=\s*([\-0-9.E\+]+)\s+"
+            r"Y=\s*([\-0-9.E\+]+)\s+"
+            r"Z=\s*([\-0-9.E\+]+)"
+            )
 
         elements = {}
 
@@ -46,6 +50,15 @@ class AtlasAgent:
                     elements[key] = float(match.group(1))
                 except ValueError:
                     elements[key] = match.group(1)
+        # Extract heliocentric XYZ
+        match = re.search(xyz_pattern, header)
+        if match_xyz:
+            for axis, idx in zip(("X", "Y", "Z"), (1, 2, 3)):
+                val = match_xyz.group(idx)
+                try:
+                    elements[axis] = float(val)
+                except ValueError:
+                    elements[axis] = val
 
         return elements
 

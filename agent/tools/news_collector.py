@@ -1,5 +1,7 @@
 import requests
 import feedparser
+from agent.tools.news_history_manager import append_today_articles
+
 
 NEWSAPI_KEY = None  # optional, set later if you want
 SPACE_QUERY = "C/2025 N1 OR ATLAS comet OR interstellar object"
@@ -8,6 +10,16 @@ SPACE_QUERY = "C/2025 N1 OR ATLAS comet OR interstellar object"
 # ----------------------
 # 1. NewsAPI collector
 # ----------------------
+KEYWORDS = ["comet", "atlas", "c/2025", "interstellar", "astronomy", "space", "nasa"]
+
+def filter_relevant_articles(articles):
+    filtered = []
+    for a in articles:
+        text = (a["title"] + " " + a["content"]).lower()
+        if any(kw in text for kw in KEYWORDS):
+            filtered.append(a)
+    return filtered
+
 def get_newsapi_articles():
     if not NEWSAPI_KEY:
         return []
@@ -72,5 +84,10 @@ def get_rss_articles():
 def collect_all_articles():
     newsapi = get_newsapi_articles()
     rss = get_rss_articles()
+    combined = newsapi + rss
 
-    return newsapi + rss
+    # store strictly relevant articles
+    append_today_articles(combined)
+
+    return combined
+
