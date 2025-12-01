@@ -41,8 +41,6 @@ agent/ (data engines + AI tools)
 automation/ (future daily jobs)
 data/ (history storage)
 
-yaml
-Copy code
 Ready for expansion.
 
 ---
@@ -63,8 +61,6 @@ Connects to NASA JPL Horizons and fetches:
 Each orbit snapshot is stored locally:
 data/history.json
 
-yaml
-Copy code
 
 Allows:
 - Drift analysis  
@@ -125,8 +121,6 @@ This will become the **main landing page**.
 Removing Streamlit sidebar, replacing it with:
 ATLAS GUARDIAN | Hero View | Orbit Data | Tools | History | Reports
 
-yaml
-Copy code
 Already supported by the new router.
 
 ---
@@ -177,37 +171,6 @@ Using orbit history to show:
 - Perihelion delta  
 - Interactive correlation graphs  
 
----
-
-# 🧩 Architecture Overview
-
-atlas-guardian/
-│
-├── app.py # Main router with navbar
-├── views/ # All Streamlit UI pages
-│ ├── hero.py
-│ ├── orbit.py
-│ ├── tools.py
-│ ├── history.py
-│ ├── reports.py
-│
-├── agent/ # AI Engines & Data Logic
-│ ├── atlas_agent.py # Core orbit fetcher/analysis
-│ ├── tools/
-│ │ ├── jpl_horizons.py
-│ │ ├── news_collector.py
-│ │ ├── history_manager.py
-│ │ ├── correlation_engine.py <-- NEW
-│ │ └── agent_tools.py
-│
-├── automation/ # GitHub Actions scripts (future X bot)
-│ └── run_daily.py
-│
-└── data/
-└── history.json # Stored orbit snapshots
-
-yaml
-Copy code
 
 ---
 
@@ -261,8 +224,6 @@ Copy code
 [Correlation Engine Output]
 [Historical Drift Graphs]
 
-yaml
-Copy code
 
 ---
 
