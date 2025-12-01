@@ -41,8 +41,6 @@ agent/ (data engines + AI tools)
 automation/ (future daily jobs)
 data/ (history storage)
 
-yaml
-Copy code
 Ready for expansion.
 
 ---
@@ -63,8 +61,6 @@ Connects to NASA JPL Horizons and fetches:
 Each orbit snapshot is stored locally:
 data/history.json
 
-yaml
-Copy code
 
 Allows:
 - Drift analysis  
@@ -125,8 +121,6 @@ This will become the **main landing page**.
 Removing Streamlit sidebar, replacing it with:
 ATLAS GUARDIAN | Hero View | Orbit Data | Tools | History | Reports
 
-yaml
-Copy code
 Already supported by the new router.
 
 ---
@@ -206,8 +200,6 @@ atlas-guardian/
 └── data/
 └── history.json # Stored orbit snapshots
 
-yaml
-Copy code
 
 ---
 
@@ -261,8 +253,6 @@ Copy code
 [Correlation Engine Output]
 [Historical Drift Graphs]
 
-yaml
-Copy code
 
 ---
 
