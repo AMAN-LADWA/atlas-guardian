@@ -2,7 +2,8 @@ import json
 import os
 from datetime import datetime
 
-DATA_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data", "news_history.json")
+ROOT = os.getenv("GITHUB_WORKSPACE", os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+DATA_PATH = os.path.join(ROOT, "data", "news_history.json")
 HISTORY_PATH = DATA_PATH
 # Keywords STRICTLY matching 3I/ATLAS
 STRICT_KEYWORDS = [
