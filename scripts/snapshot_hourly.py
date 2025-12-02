@@ -1,53 +1,50 @@
-import json
 import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
+import json
 from datetime import datetime
 
 from agent.atlas_agent import AtlasAgent
 from agent.tools.news_collector import collect_all_articles
-from agent.tools.news_history_manager import save_history as save_news_history, load_history as load_news_history
-from agent.tools.history_manager import save_history as save_orbit_history, get_history as load_orbit_history
+from agent.tools.news_history_manager import load_history as load_news_history, save_history as save_news_history
+from agent.tools.history_manager import load_history as load_orbit_history, save_history as save_orbit_history
 
 
 def run_snapshot():
-    # 1. Fetch orbit snapshot
-    agent = AtlasAgent()
-    raw_json = agent.run()
-    parsed = json.loads(raw_json)
-
     timestamp = datetime.utcnow().isoformat()
 
-    orbit_entry = {
+    # ORBIT SNAPSHOT
+    agent = AtlasAgent()
+    parsed = json.loads(agent.run())
+    latest_orbit = parsed["orbit_elements"]
+
+    orbit_hist = load_orbit_history()
+    orbit_hist.append({
         "timestamp": timestamp,
-        "elements": parsed["orbit_elements"]
-    }
+        "elements": latest_orbit
+    })
+    save_orbit_history(orbit_hist)
+    print(f"[OK] Orbit snapshot stored: {timestamp}")
 
-    # Save orbit history
-    orbit_history = load_orbit_history()
-    orbit_history.append(orbit_entry)
-    save_orbit_history(orbit_history)
-
-    print(f"[OK] Orbit snapshot stored at {timestamp}")
-
-    # 2. Collect news
+    # NEWS SNAPSHOT
     articles = collect_all_articles()
 
-    # Filter: Only include articles containing “ATLAS” or “3I”
-    relevant = []
-    for a in articles:
-        if "atlas" in a["title"].lower() or "atlas" in a["content"].lower() or "3i" in a["title"].lower():
-            relevant.append(a)
+    relevant = [
+        a for a in articles
+        if "atlas" in a["title"].lower() or "atlas" in a["content"].lower() or "3i" in a["title"].lower()
+    ]
 
     if relevant:
-        news_history = load_news_history()
-        news_history.append({
+        news_hist = load_news_history()
+        news_hist.append({
             "date": timestamp,
             "articles": relevant
         })
-        save_news_history(news_history)
-        print(f"[OK] Stored {len(relevant)} relevant news articles")
-
+        save_news_history(news_hist)
+        print(f"[OK] Stored {len(relevant)} news articles")
     else:
-        print("[INFO] No ATLAS-related news found")
+        print("[INFO] No relevant news")
 
 
 if __name__ == "__main__":

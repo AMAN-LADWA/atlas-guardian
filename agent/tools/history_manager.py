@@ -2,8 +2,8 @@ import json
 import os
 from datetime import datetime
 
-HISTORY_PATH = os.path.join("data", "history.json")
-
+DATA_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data", "orbit_history.json")
+HISTORY_PATH = DATA_PATH
 
 def load_history():
     if not os.path.exists(HISTORY_PATH):
