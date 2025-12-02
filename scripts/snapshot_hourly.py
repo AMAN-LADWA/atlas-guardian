@@ -1,4 +1,5 @@
 import os, sys
+print(">>> Using GITHUB_WORKSPACE:", os.getenv("GITHUB_WORKSPACE"))
 
 # Add REPO ROOT to Python path (dynamic, guaranteed to work)
 repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
