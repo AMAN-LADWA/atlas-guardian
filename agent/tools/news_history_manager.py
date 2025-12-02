@@ -2,8 +2,8 @@ import json
 import os
 from datetime import datetime
 
-HISTORY_PATH = "data/news_history.json"
-
+DATA_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data", "news_history.json")
+HISTORY_PATH = DATA_PATH
 # Keywords STRICTLY matching 3I/ATLAS
 STRICT_KEYWORDS = [
     "3i atlas",
