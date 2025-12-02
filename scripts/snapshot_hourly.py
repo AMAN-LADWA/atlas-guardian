@@ -1,15 +1,19 @@
-import os
-import sys
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+import os, sys
 
-import json
-from datetime import datetime
+# Add REPO ROOT to Python path (dynamic, guaranteed to work)
+repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, repo_root)
 
+print(">>> Repo Root Added:", repo_root)
+print(">>> sys.path:", sys.path)
+
+# Now import everything
 from agent.atlas_agent import AtlasAgent
 from agent.tools.news_collector import collect_all_articles
 from agent.tools.news_history_manager import load_history as load_news_history, save_history as save_news_history
 from agent.tools.history_manager import load_history as load_orbit_history, save_history as save_orbit_history
-
+from datetime import datetime
+import json
 
 def run_snapshot():
     timestamp = datetime.utcnow().isoformat()

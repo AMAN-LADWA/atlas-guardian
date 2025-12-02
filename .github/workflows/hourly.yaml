@@ -21,11 +21,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Show directory tree
+        run: |
+          pwd
+          ls -R .
+
       - name: Run snapshot script
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           PYTHONPATH: ${{ github.workspace }}
         run: python scripts/snapshot_hourly.py
+
 
       - name: Commit and push
         run: |
